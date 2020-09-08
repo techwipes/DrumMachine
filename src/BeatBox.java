@@ -130,14 +130,14 @@ public class BeatBox {
         }
     }
 
-    public class MyStartListener implements ActionListener{
+    public class MyStartListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             buildTrackAndStart();
         }
     }
 
-    public class MyStopListener implements ActionListener{
+    public class MyStopListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             sequencer.stop();
@@ -148,9 +148,16 @@ public class BeatBox {
         @Override
         public void actionPerformed(ActionEvent e) {
             float tempoFactor = sequencer.getTempoFactor();
-            sequencer.setTempoFactor((float)(tempoFactor * 1.03));
+            sequencer.setTempoFactor((float) (tempoFactor * 1.03));
         }
     }
 
+    public class MyDownTempoListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            float tempoFactor = sequencer.getTempoFactor();
+            sequencer.setTempoFactor((float) (tempoFactor * .97));
+        }
+    }
 
 }
