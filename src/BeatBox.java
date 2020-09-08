@@ -39,15 +39,15 @@ public class BeatBox {
         buttonBox.add(start);
 
         JButton stop = new JButton("Stop");
-        start.addActionListener(new MyStopListener());
+        stop.addActionListener(new MyStopListener());
         buttonBox.add(stop);
 
         JButton upTempo = new JButton("Tempo Up");
-        start.addActionListener(new MyUpTempoListener());
+        upTempo.addActionListener(new MyUpTempoListener());
         buttonBox.add(upTempo);
 
         JButton downTempo = new JButton("Tempo Down");
-        start.addActionListener(new MyDownTempoListener());
+        downTempo.addActionListener(new MyDownTempoListener());
         buttonBox.add(downTempo);
 
         Box nameBox = new Box(BoxLayout.Y_AXIS);
