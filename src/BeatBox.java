@@ -71,9 +71,13 @@ public class BeatBox {
             c.setSelected(false);
             checkboxList.add(c);
             mainPanel.add(c);
-
         }
 
+        setUpMidi();
+
+        theFrame.setBounds(50,50,300,300);
+        theFrame.pack();
+        theFrame.setVisible(true);
 
 
 
