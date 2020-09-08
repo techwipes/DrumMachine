@@ -47,8 +47,17 @@ public class BeatBox {
         buttonBox.add(upTempo);
 
         JButton downTempo = new JButton("Tempo Down");
-        start.addActionListener(new MyUpTempoListener());
-        buttonBox.add(upTempo);
+        start.addActionListener(new MyDownTempoListener());
+        buttonBox.add(downTempo);
+
+        Box nameBox = new Box(BoxLayout.Y_AXIS);
+        for (int i = 0; i < 16; i++) {
+            nameBox.add(new Label(instrumentNames[i]));
+        }
+
+        background.add(BorderLayout.EAST, buttonBox);
+        background.add(BorderLayout.WEST, nameBox);
+
 
 
 
