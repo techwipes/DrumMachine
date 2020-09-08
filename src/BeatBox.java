@@ -144,5 +144,13 @@ public class BeatBox {
         }
     }
 
+    public class MyUpTempoListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            float tempoFactor = sequencer.getTempoFactor();
+            sequencer.setTempoFactor((float)(tempoFactor * 1.03));
+        }
+    }
+
 
 }
