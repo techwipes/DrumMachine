@@ -136,4 +136,13 @@ public class BeatBox {
             buildTrackAndStart();
         }
     }
+
+    public class MyStopListener implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            sequencer.stop();
+        }
+    }
+
+
 }
