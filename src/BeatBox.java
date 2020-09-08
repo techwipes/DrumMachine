@@ -1,7 +1,4 @@
-import javax.sound.midi.MidiSystem;
-import javax.sound.midi.Sequence;
-import javax.sound.midi.Sequencer;
-import javax.sound.midi.Track;
+import javax.sound.midi.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -23,7 +20,7 @@ public class BeatBox {
     int[] instruments = {35, 42, 46, 38, 49, 39, 50, 60, 70, 72, 64, 56, 58, 47, 67, 63};
 
     public static void main(String[] args) {
-        new BeatBox2().buildGUI();
+        new BeatBox().buildGUI();
 
     }
 
@@ -169,4 +166,17 @@ public class BeatBox {
             }
         }
     }
+
+    public MidiEvent makeEvent(int command, int channel, int one, int two, int tick) {
+        MidiEvent event = null;
+        try {
+            ShortMessage a = new ShortMessage();
+            a.setMessage(command, channel, one, two);
+            event = new MidiEvent(a, tick);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return event;
+    }
+
 }
