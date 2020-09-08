@@ -4,6 +4,8 @@ import javax.sound.midi.Sequencer;
 import javax.sound.midi.Track;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 public class BeatBox {
@@ -116,7 +118,7 @@ public class BeatBox {
             makeTracks(trackList);
             track.add(makeEvent(176, 1, 127, 0, 16));
         }
-        track.add(makeEvent(192, , 9, 1, 0, 15));
+        track.add(makeEvent(192, 9, 1, 0, 15));
         try {
 
             sequencer.setSequence(sequence);
@@ -128,4 +130,10 @@ public class BeatBox {
         }
     }
 
+    public class MyStartListener implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            buildTrackAndStart();
+        }
+    }
 }
